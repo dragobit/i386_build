@@ -5,11 +5,11 @@ on: workflow_dispatch
 jobs:
   build-gmic:
     
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: docker://i386/debian:buster
     steps:
-    - uses: actions/checkout@v3
+    # - uses: actions/checkout@v3
     
     - name: install dependencies
       run: |
