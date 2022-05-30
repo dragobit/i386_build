@@ -14,7 +14,7 @@ jobs:
     - name: install dependencies
       run: |
         apt-get update
-        apt-get install git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
+        apt-get install -y git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
         
     - name: git clone
       run: |
