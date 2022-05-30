@@ -18,7 +18,7 @@ jobs:
         
     - name: git clone
       run: |
-        cd gmic
+        # cd gmic
         git clone --depth=1 https://github.com/dtschump/CImg.git
         git clone --depth=1 https://github.com/dtschump/gmic.git
         git clone --depth=1 https://github.com/c-koi/gmic-qt.git
