@@ -1,4 +1,4 @@
-name: record_test_streamlink
+name: gmic custom build
 
 on: workflow_dispatch
 
