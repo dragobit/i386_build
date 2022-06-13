@@ -7,14 +7,14 @@ jobs:
     
     runs-on: ubuntu-latest
     container:
-      image: docker://i386/node:8-buster-slim
+      image: docker://i386/node:8-buster
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     
     - name: install dependencies
       run: |
-        apt-get update
-        apt-get install -y git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
+        sudo apt-get update
+        sudo apt-get install -y git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
         
     - name: git clone
       run: |
