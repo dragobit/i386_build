@@ -7,9 +7,9 @@ jobs:
     
     runs-on: ubuntu-latest
     container:
-      image: docker://i386/debian:buster
+      image: docker://i386/node:8-buster-slim
     steps:
-    # - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
     
     - name: install dependencies
       run: |
@@ -18,7 +18,7 @@ jobs:
         
     - name: git clone
       run: |
-        # cd gmic
+        cd gmic
         git clone --depth=1 https://github.com/dtschump/CImg.git
         git clone --depth=1 https://github.com/dtschump/gmic.git
         git clone --depth=1 https://github.com/c-koi/gmic-qt.git
