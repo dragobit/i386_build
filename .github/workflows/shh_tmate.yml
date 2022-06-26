@@ -1,0 +1,14 @@
+name: SSH_try
+
+on: workflow_dispatch
+
+jobs:
+  build-gmic:
+    
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: SSH
+      id: ssh
+      uses: mxschmitt/action-tmate@v3
