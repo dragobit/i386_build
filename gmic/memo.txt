@@ -1,0 +1,11 @@
+sudo apt-get update
+sudo apt-get install -y git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
+
+
+git clone --depth=1 https://github.com/dtschump/CImg.git
+git clone --depth=1 https://github.com/dtschump/gmic.git
+#git clone --depth=1 https://github.com/c-koi/gmic-qt.git
+#git clone --depth=1 https://github.com/c-koi/zart.git
+
+cd gmic/src
+make cli
