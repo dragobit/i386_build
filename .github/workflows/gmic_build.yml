@@ -6,25 +6,15 @@ jobs:
   build-gmic:
     
     runs-on: ubuntu-latest
-    container:
-      image: i386/node:8-buster
-      options: "--entrypoint /bin/bash"
     steps:
     - uses: actions/checkout@v2
     
-    - name: install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y git build-essential libgimp2.0-dev libcurl4-openssl-dev libfftw3-dev libtiff-dev libjpeg-dev libopenexr-dev qtbase5-dev
-        
-    - name: git clone
+    - name: Run Docker
       run: |
         cd gmic
-        git clone --depth=1 https://github.com/dtschump/CImg.git
-        git clone --depth=1 https://github.com/dtschump/gmic.git
-        git clone --depth=1 https://github.com/c-koi/gmic-qt.git
-        git clone --depth=1 https://github.com/c-koi/zart.git
-    
+        mkdir artifact
+        docker run
+        
     - name: SSH
       id: ssh
       uses: mxschmitt/action-tmate@v3
@@ -33,4 +23,5 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v2
       with: 
-        path: gmic
+        path: gmic/artifact
+        name: gmic_build
